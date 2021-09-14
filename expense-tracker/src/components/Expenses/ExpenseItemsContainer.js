@@ -1,4 +1,5 @@
 import React from 'react';
+//components
 import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
 //styles
