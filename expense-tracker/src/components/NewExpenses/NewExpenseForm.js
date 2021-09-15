@@ -70,6 +70,10 @@ const NewExpenseForm = () => {
     };
 
     console.log('data', expenseFormData);
+    // This reset Value prop after submit
+    setEnteredTitle('');
+    setEnteredAmount('');
+    setEnteredDate('');
   };
 
   return (
@@ -77,12 +81,17 @@ const NewExpenseForm = () => {
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
           <label>Title</label>
-          <input type='text' onChange={titleChangeHandler} />
+          <input
+            type='text'
+            value={enteredTitle}
+            onChange={titleChangeHandler}
+          />
         </div>
         <div className='new-expense__control'>
           <label>Amount</label>
           <input
             type='number'
+            value={enteredAmount}
             min='0.01'
             step='0.01'
             onChange={amountChangeHandler}
@@ -92,6 +101,7 @@ const NewExpenseForm = () => {
           <label>Date</label>
           <input
             type='date'
+            value={enteredDate}
             min='2019-01-01'
             max='2023-12-31'
             onChange={dateChangeHandler}
