@@ -5,6 +5,7 @@ import NewExpenseForm from './NewExpenseForm';
 import './NewExpense.css';
 
 const NewExpense = (props) => {
+  // lifting state up from NewExpenseForm
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseFormData = {
       ...enteredExpenseData,

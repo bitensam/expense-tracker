@@ -31,6 +31,7 @@ function App() {
     },
   ];
 
+  // lifting state up from NewExpense
   const addNewExpenseHandler = (expense) => {
     console.log('In App.js');
     console.log(expense);
