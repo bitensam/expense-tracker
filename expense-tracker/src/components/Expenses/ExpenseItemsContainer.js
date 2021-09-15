@@ -8,14 +8,16 @@ import ExpensesFilter from './ExpensesFilter';
 
 const ExpenseItemsContainer = (props) => {
   const [filteredYear, setFilteredYear] = useState('2021');
+
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
+
   return (
     <Card className='expenses'>
       <ExpensesFilter
-        selected={filteredYear}
         onFilterDateChange={filterChangeHandler}
+        selected={filteredYear}
       />
       <ExpenseItem
         title={props.items[0].title}
