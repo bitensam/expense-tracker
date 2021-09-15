@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 //styles
 import './NewExpenseForm.css';
 
-const NewExpenseForm = () => {
+const NewExpenseForm = (props) => {
   //states
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
@@ -69,7 +69,7 @@ const NewExpenseForm = () => {
       date: new Date(enteredDate),
     };
 
-    console.log('data', expenseFormData);
+    props.onSaveExpenseData(expenseFormData);
     // This reset Value prop after submit
     setEnteredTitle('');
     setEnteredAmount('');
