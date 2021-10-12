@@ -13,13 +13,18 @@ const ExpenseItemsContainer = (props) => {
     setFilteredYear(selectedYear);
   };
 
+  // torzenie nowego arraya ktory zawiera przefiltrowane itemy czyli expense
+  const filteredExpenses = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
   return (
     <Card className='expenses'>
       <ExpensesFilter
         onFilterDateChange={filterChangeHandler}
         selected={filteredYear}
       />
-      {props.items.map((expense) => (
+      {filteredExpenses.map((expense) => (
         <ExpenseItem
           key={expense.id}
           title={expense.title}
